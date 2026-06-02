@@ -90,14 +90,14 @@ export default function Hero() {
           {/* Right Column: High-tech Visual Node & Floating Stats (safely isolated!) */}
           <div
             data-animate
-            className="lg:col-span-5 relative w-full flex items-center justify-center min-h-[380px] lg:min-h-[480px]"
+            className="lg:col-span-5 relative w-full flex items-center justify-center min-h-[300px] sm:min-h-[380px] lg:min-h-[480px]"
           >
             {/* Core Glow Center Node */}
-            <div className="absolute w-[220px] h-[220px] rounded-full bg-gradient-to-tr from-blue-600/20 to-indigo-600/20 border border-white/5 flex items-center justify-center animate-[pulse_6s_infinite_alternate] shadow-2xl shadow-blue-500/5">
-              <div className="w-[140px] h-[140px] rounded-full bg-[#1B2A4A]/60 border border-white/10 flex items-center justify-center">
+            <div className="absolute w-[160px] h-[160px] sm:w-[220px] sm:h-[220px] rounded-full bg-gradient-to-tr from-blue-600/20 to-indigo-600/20 border border-white/5 flex items-center justify-center animate-[pulse_6s_infinite_alternate] shadow-2xl shadow-blue-500/5">
+              <div className="w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] rounded-full bg-[#1B2A4A]/60 border border-white/10 flex items-center justify-center">
                 {/* Professional Geometric Dove-Network Logo */}
                 <svg
-                  className="w-14 h-14 text-blue-400 animate-pulse"
+                  className="w-10 h-10 sm:w-14 sm:h-14 text-blue-400 animate-pulse"
                   viewBox="0 0 32 32"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -176,25 +176,25 @@ export default function Hero() {
             </div>
 
             {/* Ambient Orbital Rings */}
-            <div className="absolute w-[360px] h-[360px] rounded-full border border-white/5 animate-[spin_40s_linear_infinite]" />
-            <div className="absolute w-[280px] h-[280px] rounded-full border border-dashed border-white/10 animate-[spin_25s_linear_infinite_reverse]" />
+            <div className="absolute w-[260px] h-[260px] sm:w-[360px] sm:h-[360px] rounded-full border border-white/5 animate-[spin_40s_linear_infinite]" />
+            <div className="absolute w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] rounded-full border border-dashed border-white/10 animate-[spin_25s_linear_infinite_reverse]" />
 
-            {/* 3 Moving Glassmorphic Badges (Desktop Absolute, Orbit animated) */}
+            {/* 3 Moving Glassmorphic Badges (Responsive size & positioning, Orbit animated) */}
 
             {/* Badge 1: 40% Cost Savings (Floating Top-Left) */}
             <div
-              className="lg:absolute lg:top-[12%] lg:left-[5%] bg-[#1E293B]/80 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-xl shadow-blue-500/5 max-w-[210px] z-10 select-none pointer-events-auto"
+              className="absolute top-[8%] left-[2%] sm:top-[12%] sm:left-[5%] bg-[#1E293B]/80 backdrop-blur-md border border-white/10 p-2 sm:p-4 rounded-xl shadow-xl shadow-blue-500/5 w-[145px] sm:w-[210px] z-10 select-none pointer-events-auto"
               style={{ animation: "float-1 6s ease-in-out infinite" }}
             >
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center text-base shrink-0">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center text-xs sm:text-base shrink-0">
                   💰
                 </div>
                 <div>
-                  <p className="text-[10px] text-[#94A3B8] uppercase font-bold tracking-wider">
+                  <p className="text-[8px] sm:text-[10px] text-[#94A3B8] uppercase font-bold tracking-wider">
                     Efficiency
                   </p>
-                  <h4 className="text-xs sm:text-sm font-bold text-white leading-tight mt-0.5">
+                  <h4 className="text-[10px] sm:text-xs md:text-sm font-bold text-white leading-tight mt-0.5">
                     {t("hero.float_stat1")}
                   </h4>
                 </div>
@@ -203,18 +203,18 @@ export default function Hero() {
 
             {/* Badge 2: 100+ Projects (Floating Mid-Right) */}
             <div
-              className="lg:absolute lg:top-[42%] lg:right-[0%] bg-[#1E293B]/80 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-xl shadow-indigo-500/5 max-w-[210px] z-10 select-none pointer-events-auto"
+              className="absolute top-[42%] right-[1%] sm:right-[0%] bg-[#1E293B]/80 backdrop-blur-md border border-white/10 p-2 sm:p-4 rounded-xl shadow-xl shadow-indigo-500/5 w-[145px] sm:w-[210px] z-10 select-none pointer-events-auto"
               style={{ animation: "float-2 5s ease-in-out infinite" }}
             >
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center text-base shrink-0">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center text-xs sm:text-base shrink-0">
                   🚀
                 </div>
                 <div>
-                  <p className="text-[10px] text-[#94A3B8] uppercase font-bold tracking-wider">
+                  <p className="text-[8px] sm:text-[10px] text-[#94A3B8] uppercase font-bold tracking-wider">
                     Success
                   </p>
-                  <h4 className="text-xs sm:text-sm font-bold text-white leading-tight mt-0.5">
+                  <h4 className="text-[10px] sm:text-xs md:text-sm font-bold text-white leading-tight mt-0.5">
                     {t("hero.float_stat2")}
                   </h4>
                 </div>
@@ -223,74 +223,22 @@ export default function Hero() {
 
             {/* Badge 3: Security by Design (Floating Bottom-Left) */}
             <div
-              className="lg:absolute lg:bottom-[15%] lg:left-[8%] bg-[#1E293B]/80 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-xl shadow-emerald-500/5 max-w-[220px] z-10 select-none pointer-events-auto"
+              className="absolute bottom-[10%] left-[3%] sm:left-[8%] bg-[#1E293B]/80 backdrop-blur-md border border-white/10 p-2 sm:p-4 rounded-xl shadow-xl shadow-emerald-500/5 w-[150px] sm:w-[220px] z-10 select-none pointer-events-auto"
               style={{ animation: "float-3 7s ease-in-out infinite" }}
             >
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center text-base shrink-0">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center text-xs sm:text-base shrink-0">
                   🛡️
                 </div>
                 <div>
-                  <p className="text-[10px] text-[#94A3B8] uppercase font-bold tracking-wider">
+                  <p className="text-[8px] sm:text-[10px] text-[#94A3B8] uppercase font-bold tracking-wider">
                     Compliance
                   </p>
-                  <h4 className="text-xs sm:text-sm font-bold text-white leading-tight mt-0.5">
+                  <h4 className="text-[10px] sm:text-xs md:text-sm font-bold text-white leading-tight mt-0.5">
                     {t("hero.float_stat3")}
                   </h4>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile/Tablet fallback: Render static row of float cards ONLY on medium screens and below so they stack beautifully under the grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 lg:hidden relative z-10">
-          <div
-            className="bg-[#1E293B]/70 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-lg flex items-center gap-3"
-            style={{ animation: "float-1 6s ease-in-out infinite" }}
-          >
-            <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center text-base shrink-0">
-              💰
-            </div>
-            <div>
-              <p className="text-[10px] text-[#94A3B8] uppercase font-bold tracking-wider">
-                Efficiency
-              </p>
-              <h4 className="text-xs sm:text-sm font-bold text-white mt-0.5">
-                {t("hero.float_stat1")}
-              </h4>
-            </div>
-          </div>
-          <div
-            className="bg-[#1E293B]/70 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-lg flex items-center gap-3"
-            style={{ animation: "float-2 5s ease-in-out infinite" }}
-          >
-            <div className="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center text-base shrink-0">
-              🚀
-            </div>
-            <div>
-              <p className="text-[10px] text-[#94A3B8] uppercase font-bold tracking-wider">
-                Success
-              </p>
-              <h4 className="text-xs sm:text-sm font-bold text-white mt-0.5">
-                {t("hero.float_stat2")}
-              </h4>
-            </div>
-          </div>
-          <div
-            className="bg-[#1E293B]/70 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-lg flex items-center gap-3"
-            style={{ animation: "float-3 7s ease-in-out infinite" }}
-          >
-            <div className="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center text-base shrink-0">
-              🛡️
-            </div>
-            <div>
-              <p className="text-[10px] text-[#94A3B8] uppercase font-bold tracking-wider">
-                Compliance
-              </p>
-              <h4 className="text-xs sm:text-sm font-bold text-white mt-0.5">
-                {t("hero.float_stat3")}
-              </h4>
             </div>
           </div>
         </div>
