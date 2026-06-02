@@ -38,8 +38,14 @@ export default function TopBar() {
                   ? "bg-blue-600 text-white shadow-md shadow-blue-500/20"
                   : "text-white/60 hover:text-white hover:bg-white/5"
               }`}
+              aria-label="Deutsch"
             >
-              <span>🇩🇪</span> DE
+              <img
+                src="/de.svg"
+                alt="Deutsch"
+                className="w-4.5 h-3 object-cover rounded-sm border border-white/20 shadow-sm"
+              />
+              <span>DE</span>
             </button>
             <button
               onClick={() => setLanguage("en")}
@@ -48,8 +54,14 @@ export default function TopBar() {
                   ? "bg-blue-600 text-white shadow-md shadow-blue-500/20"
                   : "text-white/60 hover:text-white hover:bg-white/5"
               }`}
+              aria-label="English"
             >
-              <span>🇬🇧</span> EN
+              <img
+                src="/us.svg"
+                alt="English"
+                className="w-4.5 h-3 object-cover rounded-sm border border-white/20 shadow-sm"
+              />
+              <span>EN</span>
             </button>
           </div>
         </div>

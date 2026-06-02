@@ -49,30 +49,78 @@ export default function Navbar() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <defs>
-                <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient
+                  id="navLogoGrad"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
                   <stop offset="0%" stopColor="#3B82F6" />
                   <stop offset="100%" stopColor="#6366F1" />
                 </linearGradient>
               </defs>
               {/* Stylized geometric flying dove wings & body */}
-              <path d="M28 6 L18 14 L24 22 L28 6 Z" fill="url(#navLogoGrad)" opacity="0.9" />
+              <path
+                d="M28 6 L18 14 L24 22 L28 6 Z"
+                fill="url(#navLogoGrad)"
+                opacity="0.9"
+              />
               <path d="M18 14 L6 18 L14 26 L18 14 Z" fill="url(#navLogoGrad)" />
-              <path d="M18 14 L24 22 L14 26 L18 14 Z" fill="#F8FAFC" opacity="0.8" />
-              
+              <path
+                d="M18 14 L24 22 L14 26 L18 14 Z"
+                fill="#F8FAFC"
+                opacity="0.8"
+              />
+
               {/* Network nodes overlay */}
               <circle cx="28" cy="6" r="2" fill="#10B981" />
               <circle cx="6" cy="18" r="2" fill="#10B981" />
               <circle cx="14" cy="26" r="2" fill="#10B981" />
-              <circle cx="18" cy="14" r="2.5" fill="#3B82F6" stroke="#F8FAFC" strokeWidth="1" />
-              
+              <circle
+                cx="18"
+                cy="14"
+                r="2.5"
+                fill="#3B82F6"
+                stroke="#F8FAFC"
+                strokeWidth="1"
+              />
+
               {/* Tech connection lines */}
-              <line x1="28" y1="6" x2="18" y2="14" stroke="#10B981" strokeWidth="0.75" strokeDasharray="1.5 1.5" />
-              <line x1="6" y1="18" x2="18" y2="14" stroke="#10B981" strokeWidth="0.75" strokeDasharray="1.5 1.5" />
-              <line x1="14" y1="26" x2="18" y2="14" stroke="#10B981" strokeWidth="0.75" strokeDasharray="1.5 1.5" />
+              <line
+                x1="28"
+                y1="6"
+                x2="18"
+                y2="14"
+                stroke="#10B981"
+                strokeWidth="0.75"
+                strokeDasharray="1.5 1.5"
+              />
+              <line
+                x1="6"
+                y1="18"
+                x2="18"
+                y2="14"
+                stroke="#10B981"
+                strokeWidth="0.75"
+                strokeDasharray="1.5 1.5"
+              />
+              <line
+                x1="14"
+                y1="26"
+                x2="18"
+                y2="14"
+                stroke="#10B981"
+                strokeWidth="0.75"
+                strokeDasharray="1.5 1.5"
+              />
             </svg>
           </div>
           <span className="text-xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-[#F8FAFC] to-[#94A3B8] group-hover:text-blue-400 transition-colors">
-            Taube<span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Tech</span>
+            Taube
+            <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+              Tech
+            </span>
           </span>
         </a>
 
@@ -153,23 +201,37 @@ export default function Navbar() {
 
           {/* Synced Mobile Language Toggle inside Mobile Drawer */}
           <div className="flex items-center justify-between border-b border-white/5 py-4">
-            <span className="text-sm font-medium text-[#94A3B8]">Sprache / Language:</span>
+            <span className="text-sm font-medium text-[#94A3B8]">
+              Sprache / Language:
+            </span>
             <div className="border border-white/20 rounded-full p-0.5 flex bg-black/20">
               <button
                 onClick={() => setLanguage("de")}
-                className={`px-3 py-1 text-xs font-semibold rounded-full transition-all flex items-center gap-1 ${
+                className={`px-3 py-1 text-xs font-semibold rounded-full transition-all flex items-center gap-1.5 ${
                   lang === "de" ? "bg-blue-600 text-white" : "text-white/60"
                 }`}
+                aria-label="Deutsch"
               >
-                🇩🇪 DE
+                <img
+                  src="/de.svg"
+                  alt="Deutsch"
+                  className="w-4.5 h-3 object-cover rounded-sm border border-white/20 shadow-sm"
+                />
+                <span>DE</span>
               </button>
               <button
                 onClick={() => setLanguage("en")}
-                className={`px-3 py-1 text-xs font-semibold rounded-full transition-all flex items-center gap-1 ${
+                className={`px-3 py-1 text-xs font-semibold rounded-full transition-all flex items-center gap-1.5 ${
                   lang === "en" ? "bg-blue-600 text-white" : "text-white/60"
                 }`}
+                aria-label="English"
               >
-                🇬🇧 EN
+                <img
+                  src="/us.svg"
+                  alt="English"
+                  className="w-4.5 h-3 object-cover rounded-sm border border-white/20 shadow-sm"
+                />
+                <span>EN</span>
               </button>
             </div>
           </div>
