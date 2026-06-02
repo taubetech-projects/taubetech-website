@@ -1,65 +1,132 @@
-import Image from "next/image";
+"use client";
+
+import React, { useEffect } from "react";
+import TopBar from "../components/TopBar";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Services from "../components/Services";
+import Platforms from "../components/Platforms";
+import WhyChooseUs from "../components/WhyChooseUs";
+import About from "../components/About";
+import StatsBar from "../components/StatsBar";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 export default function Home() {
+  // 1. Dynamic Keyframes CSS injection into document head
+  // 2. Smooth scrolling activation
+  useEffect(() => {
+    // Enable smooth scroll
+    document.documentElement.style.scrollBehavior = "smooth";
+
+    // Inject custom CSS keyframes
+    const styleTag = document.createElement("style");
+    styleTag.id = "taubetech-dynamic-keyframes";
+    styleTag.type = "text/css";
+    styleTag.innerHTML = `
+      @keyframes float-1 {
+        0%, 100% { transform: translateY(0px) translateX(0px); }
+        50% { transform: translateY(-14px) translateX(6px); }
+      }
+      @keyframes float-2 {
+        0%, 100% { transform: translateY(0px) translateX(0px); }
+        50% { transform: translateY(12px) translateX(-8px); }
+      }
+      @keyframes float-3 {
+        0%, 100% { transform: translateY(0px) translateX(0px); }
+        50% { transform: translateY(-10px) translateX(-10px); }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+      }
+      @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(24px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes gradientShift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+    `;
+    document.head.appendChild(styleTag);
+
+    return () => {
+      const tag = document.getElementById("taubetech-dynamic-keyframes");
+      if (tag) {
+        document.head.removeChild(tag);
+      }
+    };
+  }, []);
+
+  // 3. Intersection Observer Scroll Reveal for elements with [data-animate]
+  useEffect(() => {
+    const targets = document.querySelectorAll("[data-animate]");
+
+    // Assign initial hidden animation states
+    targets.forEach((target) => {
+      target.classList.add("reveal-init");
+    });
+
+    const observerOptions = {
+      root: null, // viewport
+      rootMargin: "0px 0px -60px 0px", // trigger slightly before view entry
+      threshold: 0.05, // trigger when 5% is visible
+    };
+
+    const revealCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-active");
+          // Stop observing once animated
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(revealCallback, observerOptions);
+
+    targets.forEach((target) => {
+      observer.observe(target);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="min-h-screen flex flex-col bg-[#0A0F1E] font-sans selection:bg-blue-600 selection:text-white">
+      {/* Top Header Bar */}
+      <TopBar />
+
+      {/* Sticky Main Navbar */}
+      <Navbar />
+
+      {/* Landing Page Content Stack */}
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <Hero />
+
+        {/* Services / Leistungen */}
+        <Services />
+
+        {/* Spotlight Platforms (AI + ShopBuilder) */}
+        <Platforms />
+
+        {/* Value Proposition / Warum TaubeTech */}
+        <WhyChooseUs />
+
+        {/* Company Vision & Staggered Panels */}
+        <About />
+
+        {/* Counter Stats Band */}
+        <StatsBar />
+
+        {/* Consultation Form & Coordinates */}
+        <Contact />
       </main>
+
+      {/* Main Footer & Badging */}
+      <Footer />
     </div>
   );
 }
