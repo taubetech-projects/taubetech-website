@@ -201,7 +201,7 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Badge 2: 100+ Projects (Floating Mid-Right) */}
+            {/* Badge 2: 35+ Projects (Floating Mid-Right) */}
             <div
               className="absolute top-[42%] right-[1%] sm:right-[0%] bg-[#1E293B]/80 backdrop-blur-md border border-white/10 p-2 sm:p-4 rounded-xl shadow-xl shadow-indigo-500/5 w-[145px] sm:w-[210px] z-10 select-none pointer-events-auto"
               style={{ animation: "float-2 5s ease-in-out infinite" }}

@@ -51,7 +51,7 @@ export default function StatsBar() {
       const easeProgress = progress * (2 - progress);
 
       setCostSavings(Math.floor(easeProgress * 40));
-      setProjectsCount(Math.floor(easeProgress * 100));
+      setProjectsCount(Math.floor(easeProgress * 35));
       setServicesCount(Math.floor(easeProgress * 6));
       setDsgvoPercentage(Math.floor(easeProgress * 100));
 
@@ -60,7 +60,7 @@ export default function StatsBar() {
       } else {
         // Enforce final values exactly
         setCostSavings(40);
-        setProjectsCount(100);
+        setProjectsCount(35);
         setServicesCount(6);
         setDsgvoPercentage(100);
       }

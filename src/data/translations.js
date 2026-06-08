@@ -27,13 +27,13 @@ export const translations = {
       trust_hosting: "EU-Hosting",
       trust_location: "Stuttgart, Germany",
       float_stat1: "40% Kosteneinsparung",
-      float_stat2: "100+ Projekte",
+      float_stat2: "35+ Projekte",
       float_stat3: "Security by Design",
     },
     // Services
     services: {
       eyebrow: "Unsere Kernleistungen",
-      headline: "Drei Säulen der digitalen Transformation",
+      headline: "Wichtige Säulen der digitalen Transformation",
       badge_new: "NEU",
       badge_popular: "BELIEBT",
       card1_title: "KI-Automatisierung 🤖",
@@ -183,13 +183,13 @@ export const translations = {
       trust_hosting: "EU Hosting",
       trust_location: "Stuttgart, Germany",
       float_stat1: "40% Cost Savings",
-      float_stat2: "100+ Projects",
+      float_stat2: "35+ Projects",
       float_stat3: "Security by Design",
     },
     // Services
     services: {
       eyebrow: "Our Core Services",
-      headline: "Three Pillars of Digital Transformation",
+      headline: "Important Pillars of Digital Transformation",
       badge_new: "NEW",
       badge_popular: "POPULAR",
       card1_title: "AI Automation 🤖",
